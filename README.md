@@ -4,38 +4,38 @@ This module displays the current times of several locations.
 
 ## Installation
 
-  1\. Execute the following commands to install the module:
+1\. Execute the following commands to install the module:
 
 ```bash
 cd ~/MagicMirror/modules # navigate to module folder
-git clone https://github.com/[]/worldclock # clone this repository
+git clone https://github.com/eouia/worldclock # clone this repository
 ```
 
-  2\. Then, add the following into the `modules` section of your `config/config.js` file:
+2\. Then, add the following into the `modules` section of your `config/config.js` file:
 
 ````javascript
 {
-    module: 'worldclock',
-    position: 'bottom_center', // This can be any of the regions, best results in center regions
-    config: {
-        // See 'Configuration options' for more information.
+  module: 'worldclock',
+  position: 'top_left', // This can be any of the regions, best results in top_left or top_right regions
+  config: {
+    // See 'Configuration options' for more information.
 
-        timeFormat: 'HH:mm A', //defined in moment.js format()
-		style: 'top', //predefined 4 styles; 'top', 'left','right','bottom'
-		clocks: [
-			{
-				title: "Home",
-			},
-			{
-				title: "HOLLYWOOD", // Too long title could cause ugly text align.
-				timezone: "America/Los_Angeles", //When omitted, Localtime will be displayed. It might be not your purporse, I bet.
-				timegap: true, // options: 'true' shows timezone gap by UTC
-			},
-			{
-				timezone: "Asia/Seoul",
-			},
-		]
-    }
+    timeFormat: 'HH:mm A', //defined in moment.js format()
+    style: 'top', //predefined 4 styles; 'top', 'left','right','bottom'
+    clocks: [
+      {
+        title: "Home",
+      },
+      {
+        title: "HOLLYWOOD", // Too long title could cause ugly text align.
+        timezone: "America/Los_Angeles", //When omitted, Localtime will be displayed. It might be not your purporse, I bet.
+        timegap: true, // options: 'true' shows timezone gap by UTC
+      },
+      {
+        timezone: "Asia/Seoul",
+      },
+    ]
+  }
 },
 ````
 Of course, you should change the configuration values for your purpose.
