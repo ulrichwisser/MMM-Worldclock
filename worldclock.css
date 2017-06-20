@@ -1,0 +1,94 @@
+.worldclock {
+  width:100%;
+  min-width:240px;
+  line-height:normal;
+}
+.worldclock .clearfix {
+  clear:both;
+  border-bottom:1px solid #999;
+  padding-top:5px;
+  padding-bottom:5px;
+  display:block;
+  width:100%;
+}
+.worldclock .world {
+  margin-bottom: 10px;
+  width:100%;
+}
+
+.worldclock .time {
+  display:block;
+  height:100%;
+}
+
+.worldclock .caption {
+  display:block;
+  height:100%;
+  font-size:50%;
+  line-height:normal;
+}
+
+.worldclock .gap {
+  display:block;
+  padding:0;
+  margin:0;
+}
+.worldclock .zone {
+  display:block;
+  padding:0;
+  margin:0;
+}
+/* style : top */
+.worldclock .style-top .zone,
+.worldclock .style-top .gap {
+  display:inline;
+}
+
+.worldclock .style-top .gap::before {
+  content: "  ";
+}
+
+/* style : bottom */
+.worldclock .style-bottom .zone,
+.worldclock .style-bottom .gap {
+  display:inline;
+}
+
+.worldclock .style-bottom .gap::before {
+  content: "  ";
+}
+
+
+
+.worldclock .style-right .time {
+  width:50%;
+
+  float:right;
+  margin-left:10px;
+  text-align:left;
+}
+
+.worldclock .style-right .caption {
+  width:50%;
+
+  text-align:right;
+}
+
+.worldclock .style-left .time {
+  width:50%;
+
+  float:left;
+  text-align:right;
+}
+
+.worldclock .style-left .caption {
+  width:50%;
+
+  text-align:left;
+  float:right;
+}
+
+.worldclock .style-left .zone,
+.worldclock .style-left .gap {
+  padding-left:10px;
+}
