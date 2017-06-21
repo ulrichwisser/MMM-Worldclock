@@ -1,9 +1,8 @@
 /* global Log, Module, moment, config */
 /* Magic Mirror
-* Module: Clock
+* Module: worldlock
 *
-* By Michael Teeuw http://michaelteeuw.nl
-* MIT Licensed.
+* By eouia
 */
 Module.register("worldclock",{
 	// Module config defaults.
