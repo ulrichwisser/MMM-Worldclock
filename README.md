@@ -2,6 +2,8 @@
 This module is derived from default MagicMirror module 'clock' and modified. Thanks to michaelteeuw.
 This module displays the current times of several locations.
 
+![](https://github.com/eouia/worldclock/blob/master/world-clock.png?raw=true)
+
 ## Installation
 
 1\. Execute the following commands to install the module:
