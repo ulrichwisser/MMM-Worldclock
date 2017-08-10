@@ -29,7 +29,7 @@ git clone https://github.com/eouia/worldclock # clone this repository
       {
         title: "HOLLYWOOD", // Too long title could cause ugly text align.
         timezone: "America/Los_Angeles", //When omitted, Localtime will be displayed. It might be not your purporse, I bet.
-        timegap: true, // options: 'true' shows timezone gap by UTC
+        flag: "us",
       },
       {
         timezone: "Asia/Seoul",
@@ -59,34 +59,22 @@ The following properties can be configured:
 | ----------------- | -----------
 | `title`           | The clock title of each timezone. if it is omitted or null, the `timezone` value will be displayed instead. <br><br> **Example:** `My Home`, `The Golden Gate`, `Hong Kong Office` or `null`  
 | `timezone`        | Specify a timezone to show current local time. <br><br> **Possible examples values:** `America/New_York`, `Europe/Berlin`, `Etc/GMT+10` <br>See more informations about configuration value [here](https://momentjs.com/timezone/docs/#/data-formats/packed-format/)<br> **Default value:** `null`<br> If this value is null or omitted, current local timezone value (defined in config.js) will be used. I don't recommend it because the purpose of this module is showing another local time.<br>All available timzone codes are [here](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
-| `timegap`         | omittable. It just shows the differential gap with UTC <br><br> **Possible values:** `true` (any other values will be assumed `null` or `false`)
+|`flag `  |  [ISO 3166-1-alpha-2 code](https://www.iso.org/obp/ui/#search/code/) for country. | 
+| `timegap`         | **deprecated**<br> You can hide this in `.css`.|
 
 
 ## Style Customizing
 I Prefer modifying looks by CSS.<br>
-Here is the HTML structure example. You can modify CSS easily with this classname selectors.
-```html
-<div class="worldtime style-top">
-  <div class="world world-0">
-    <div class="time bright normal medium">3:38 PM</div>
-    <div class="caption">
-      <div class="zone">Home</div>
-    </div>
-    <div class="clearfix"></div>
-  </div>
-  <div class="world world-1">
-    <div class="time bright normal medium">6:38 AM</div>
-    <div class="caption">
-      <div class="zone">HOLLYWOOD</div>
-      <div class="gap">UTC -07:00</div>
-    </div>
-    <div class="clearfix"></div>
-  </div>
-</div>
-````
+
 Every clock has 'world-[seq.]' as it's classname. So you can modify color of specific clock(eg. 'world-1' means second clock)
 
 And if you set the `style` value in configuration, the classname 'style-[style config value]' will be assigned to top level container block. (eg. `style-top`)
+
+## Updated
+* 2017-08-10 
+  * Country flags are supported.
+  * HTML/CSS Structures are refined.
+
 
 Thanks for everyone.
 
