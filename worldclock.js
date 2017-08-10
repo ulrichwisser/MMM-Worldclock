@@ -11,7 +11,9 @@ Module.register("worldclock",{
 		style: 'left', //where the time could be located; 'top', 'left','right','bottom'
 		clocks: [
 			{
-				title: "Home",
+				title: "Seoul",
+				timezone:"Asia/Seoul",
+				flag:"kr"
 			},
 		]
 	},
