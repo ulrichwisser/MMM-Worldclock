@@ -8,104 +8,98 @@ Module.register("worldclock",{
 	// Module config defaults.
 	defaults: {
 		timeFormat: 'LT', //defined in moment.js format()
-		style: 'top', //where the time could be located; 'top', 'left','right','bottom'
+		style: 'left', //where the time could be located; 'top', 'left','right','bottom'
 		clocks: [
 			{
 				title: "Home",
-			},
-			{
-				title: "HOLLYWOOD", // Too long title could cause ugly text align.
-				timezone: "America/Los_Angeles", //When omitted, Localtime will be displayed. It might be not your purporse, I bet.
-				timegap: true, // options: 'true' shows timezone gap by UTC
-			},
-			{
-				timezone: "Asia/Seoul",
 			},
 		]
 	},
 	// Define required scripts.
 	getScripts: function() {
-		return ["moment.js", "moment-timezone.js"];
+		return ["moment.js", "moment-timezone.js"]
 	},
 	// Define styles.
 	getStyles: function() {
-		return ["worldclock.css"];
+		return ["worldclock.css"]
 	},
-	// Define start sequence.
-	start: function() {
-		Log.info("Starting module: " + this.name);
 
-		// Schedule update interval.
-		var self = this;
+	start: function() {
+
+		this.loadCSS()
+		var self = this
 		setInterval(function() {
-			self.updateDom();
-		}, 1000);
+			self.updateDom()
+		}, 100000)
 
 		// Set locale.
-		moment.locale(config.language);
+		moment.locale(config.language)
 	},
 
 	clockFormat: function(c, index) {
+		var worldWrapper = document.createElement("div")
+		worldWrapper.className = "world world-" + index
 
-		var worldWrapper = document.createElement("div");
-		worldWrapper.className = "world world-" + index;
-
-		var clock = moment();
+		var clock = moment()
 
 		if (c.timezone == null || undefined ) {
-			clock.local();
+			clock.local()
 		} else {
-			clock.tz(c.timezone);
+			clock.tz(c.timezone)
 		}
 
-		var timeString;
-		timeString = clock.format(this.config.timeFormat);
+		var timeString
+		timeString = clock.format(this.config.timeFormat)
 
+		var timeWrapper = document.createElement("div")
+		timeWrapper.innerHTML = timeString
+		timeWrapper.className = "time"
+		//timeWrapper.className = "time bright medium"
 
-		var timeWrapper = document.createElement("div");
+		var captionWrapper = document.createElement("div")
+		captionWrapper.className = "caption"
+		//captionWrapper.className = 'caption small normal'
 
-		timeWrapper.innerHTML = timeString;
-		timeWrapper.className = "time bright medium";
-
-		var captionWrapper = document.createElement("div");
-		captionWrapper.className = 'caption small normal';
-
-
-		var zoneWrapper = document.createElement("div");
-		zoneWrapper.className = 'zone';
+		var zoneWrapper = document.createElement("div")
+		zoneWrapper.className = 'zone'
 
 		if (c.title != null) {
-			zoneWrapper.innerHTML = c.title;
+			zoneWrapper.innerHTML = c.title
 		} else {
-			zoneWrapper.innerHTML = c.timezone;
+			zoneWrapper.innerHTML = c.timezone
+		}
+
+		captionWrapper.appendChild(zoneWrapper)
+
+		var gapWrapper = document.createElement("div")
+		gapWrapper.className = 'gap'
+		gapWrapper.innerHTML = 'UTC ' + clock.format('Z')
+
+		captionWrapper.appendChild(gapWrapper)
+
+
+
+		var mainWrapper = document.createElement("div")
+		mainWrapper.className = "main"
+
+		if (c.flag) {
+			var flagWrapper = document.createElement("div")
+			flagWrapper.className = "flag"
+			var flagIconWrapper = document.createElement("span")
+			flagIconWrapper.className = "flag-icon flag-icon-squared"
+			flagIconWrapper.className += " flag-icon-" + c.flag
+			flagWrapper.appendChild(flagIconWrapper)
+			mainWrapper.appendChild(flagWrapper)
 		}
 
 
 
-		var clearfixWrapper = document.createElement("div");
-		clearfixWrapper.className = "clearfix";
+		mainWrapper.appendChild(timeWrapper)
 
-		captionWrapper.appendChild(zoneWrapper);
+		worldWrapper.appendChild(mainWrapper)
+		worldWrapper.appendChild(captionWrapper)
 
-		if (c.timegap == true) {
-			var gapWrapper = document.createElement("div");
-			gapWrapper.className = 'gap';
-			gapWrapper.innerHTML = 'UTC ' + clock.format('Z');
-			captionWrapper.appendChild(gapWrapper);
-		}
-
-		if (this.config.style == 'bottom') {
-			worldWrapper.appendChild(captionWrapper);
-			worldWrapper.appendChild(timeWrapper);
-		} else {
-			worldWrapper.appendChild(timeWrapper);
-			worldWrapper.appendChild(captionWrapper);
-
-		}
-
-		worldWrapper.appendChild(clearfixWrapper);
-
-		return worldWrapper;
+		return worldWrapper
 	},
 
 
@@ -113,13 +107,36 @@ Module.register("worldclock",{
 
 	// Override dom generator.
 	getDom: function() {
-
-		var wrapper = document.createElement("div");
-		wrapper.className = "worldtime" + ' style-' + this.config.style;
-		var c;
+		var wrapper = document.createElement("div")
+		wrapper.className
+			= "worldtime"
+				+ ' style-' + this.config.style
+		var c
 		for (c in this.config.clocks) {
-			wrapper.appendChild(this.clockFormat(this.config.clocks[c], c));
+			wrapper.appendChild(this.clockFormat(this.config.clocks[c], c))
 		}
-		return wrapper;
-	}
-});
+		return wrapper
+	},
+
+	loadCSS: function() {
+    var css = [
+      {
+        id:'flag-icon-CSS',
+        href: 'https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/2.8.0/css/flag-icon.min.css'
+      }
+    ]
+    css.forEach(function(c) {
+      if (!document.getElementById(c.id))
+      {
+        var head  = document.getElementsByTagName('head')[0]
+        var link  = document.createElement('link')
+        link.id   = c.id
+        link.rel  = 'stylesheet'
+        link.type = 'text/css'
+        link.href = c.href
+        link.media = 'all'
+        head.appendChild(link)
+      }
+    })
+  },
+})

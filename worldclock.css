@@ -1,94 +1,188 @@
 .worldclock {
-  width:100%;
-  min-width:240px;
+  min-width:270px;
   line-height:normal;
-}
-.worldclock .clearfix {
-  clear:both;
-  border-bottom:1px solid #999;
-  padding-top:5px;
-  padding-bottom:5px;
   display:block;
-  width:100%;
 }
+
 .worldclock .world {
   margin-bottom: 10px;
-  width:100%;
 }
 
 .worldclock .time {
   display:block;
   height:100%;
+  color:#FFF;
+}
+
+.worldclock .flag {
+  font-size:100%;
 }
 
 .worldclock .caption {
-  display:block;
+  display:flex;
   height:100%;
   font-size:50%;
-  line-height:normal;
+}
+
+.worldclock .main {
+  display:flex;
 }
 
 .worldclock .gap {
-  display:block;
   padding:0;
   margin:0;
+  color: #999;
 }
+
 .worldclock .zone {
   display:block;
   padding:0;
   margin:0;
+  color:#DDD;
 }
+
+.worldclock .flag-icon {
+  border-radius: 50%;
+  box-shadow:0 0 3px #FFF;
+}
+
+
+
+
 /* style : top */
+.worldclock .style-top .world {
+  display:flex;
+  flex-direction: column-reverse;
+  justify-content:center;
+  align-items:stretch;
+  text-align:inherit;
+}
+
+.worldclock .style-top .caption,
+.worldclock .style-top .main {
+  display:block;
+  text-align:inherit;
+  vertical-align:top;
+}
+
+.worldclock .style-top .flag,
+.worldclock .style-top .time,
 .worldclock .style-top .zone,
 .worldclock .style-top .gap {
   display:inline;
 }
 
+.worldclock .style-top .time::before,
 .worldclock .style-top .gap::before {
   content: "  ";
 }
 
 /* style : bottom */
+.worldclock .style-bottom .world {
+  display:flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items:stretch;
+  text-align:inherit;
+}
+
+.worldclock .style-bottom .caption,
+.worldclock .style-bottom .main {
+  display:block;
+  text-align:inherit;
+  vertical-align:top;
+}
+
+.worldclock .style-bottom .flag,
+.worldclock .style-bottom .time,
 .worldclock .style-bottom .zone,
 .worldclock .style-bottom .gap {
   display:inline;
 }
 
+.worldclock .style-bottom .time::before,
 .worldclock .style-bottom .gap::before {
   content: "  ";
 }
 
-
-
-.worldclock .style-right .time {
-  width:50%;
-
-  float:right;
-  margin-left:10px;
-  text-align:left;
-}
-
-.worldclock .style-right .caption {
-  width:50%;
-
-  text-align:right;
-}
-
-.worldclock .style-left .time {
-  width:50%;
-
-  float:left;
-  text-align:right;
+/* style : left */
+.worldclock .style-left .world {
+  display:flex;
+  flex-direction: row-reverse;
+  justify-content:flex-start;
+  align-items:center;
+  align-content:flex-start;
+  text-align:inherit;
 }
 
 .worldclock .style-left .caption {
-  width:50%;
-
-  text-align:left;
-  float:right;
+  display:flex;
+  flex-direction: column;
+  align-items:flex-end;
+  margin-right:15px;
+  flex-grow:1;
+  width:30%;
 }
 
-.worldclock .style-left .zone,
-.worldclock .style-left .gap {
-  padding-left:10px;
+.worldclock .style-left .caption .zone,
+.worldclock .style-left .caption .gap {
+  display:block;
+  text-align:right;
+
+}
+
+.worldclock .style-left .main {
+  flex-grow:1;
+  width:70%;
+}
+
+.worldclock .style-left .main .flag {
+  order:2;
+  margin-left:10px;
+}
+
+.worldclock .style-left .main .time {
+  order:1;
+}
+
+
+/* style : right */
+.worldclock .style-right .world {
+  display:flex;
+  flex-direction: row;
+  justify-content:center;
+  align-items:center;
+  text-align:inherit;
+}
+
+.worldclock .style-right .caption {
+  display:flex;
+  flex-direction: column;
+  align-items:flex-start;
+  margin-left:15px;
+  flex-grow:1;
+  width:30%;
+}
+
+.worldclock .style-right .caption .zone,
+.worldclock .style-right .caption .gap {
+  display:block;
+  text-align:left;
+}
+
+.worldclock .style-right .main {
+  flex-grow:1;
+  text-align:right;
+  justify-content: flex-end;
+  align-items:center;
+  width:70%;
+}
+
+.worldclock .style-right .main .flag {
+  order:1;
+  margin-right :10px;
+}
+
+.worldclock .style-right .main .time {
+  order:2;
 }
