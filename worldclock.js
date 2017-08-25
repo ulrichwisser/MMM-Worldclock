@@ -26,13 +26,42 @@ Module.register("worldclock",{
 		return ["worldclock.css"]
 	},
 
+	getCommands: function() {
+		return [
+			{
+		    command: 'worldclock',
+		    description: 'Tell the time of worldclock',
+		    callback : 'TLGBOT_worldclock',
+		  },
+		]
+	},
+
+	TLGBOT_worldclock: function(command, handler) {
+		var text = ""
+		var m = moment()
+		for (var c in this.config.clocks) {
+			var clock = this.config.clocks[c]
+			var title = (clock.title) ? clock.title : clock.timezone
+			if (clock.timezone) {
+				m.tz(clock.timezone)
+			} else {
+				m.local()
+			}
+
+			text += "`" + m.format(this.config.timeFormat) + "`"
+			text += " in *" + title + "*\n"
+		}
+		text = (text) ? text : "I cannot answer now, sorry."
+		handler.reply("TEXT", text, {parse_mode:'Markdown'})
+	},
+
 	start: function() {
 
 		this.loadCSS()
 		var self = this
 		setInterval(function() {
 			self.updateDom()
-		}, 100000)
+		}, 1000)
 
 		// Set locale.
 		moment.locale(config.language)
@@ -102,6 +131,10 @@ Module.register("worldclock",{
 		worldWrapper.appendChild(captionWrapper)
 
 		return worldWrapper
+	},
+
+	notificationReceived: function(noti, payload) {
+
 	},
 
 
