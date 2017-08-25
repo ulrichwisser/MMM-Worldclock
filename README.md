@@ -73,6 +73,9 @@ Every clock has 'world-[seq.]' as it's classname. So you can modify color of spe
 And if you set the `style` value in configuration, the classname 'style-[style config value]' will be assigned to top level container block. (eg. `style-top`)
 
 ## Updated
+* 2017-08-25
+  * supports `MMM-TelegramBot` (https://github.com/eouia/MMM-TelegramBot)
+  * command `/worldclock` is added
 * 2017-08-10 
   * Country flags are supported.
   * HTML/CSS Structures are refined.
