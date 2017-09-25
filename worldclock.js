@@ -26,14 +26,16 @@ Module.register("worldclock",{
     return ["worldclock.css"]
   },
 
-  getCommands: function() {
-    return [
-      {
-        command: 'worldclock',
-        description: 'Tell the time of worldclock',
-        callback : 'TLGBOT_worldclock',
-      },
-    ]
+  getCommands: function(commander) {
+    if (commander.constructor.name == 'TelegramBotCommandRegister') {
+      return [
+        {
+          command: 'worldclock',
+          description: 'Tell the time of worldclock',
+          callback : 'TLGBOT_worldclock',
+        },
+      ]
+    }
   },
 
   TLGBOT_worldclock: function(command, handler) {
