@@ -9,11 +9,12 @@ Module.register("worldclock",{
   defaults: {
     timeFormat: 'LT', //defined in moment.js format()
     style: 'left', //where the time could be located; 'top', 'left','right','bottom'
+    offsetTimeZone: null, // or "Europe/Berlin" to get difference from this timezone to each clock.
     clocks: [
       {
         title: "Seoul",
         timezone:"Asia/Seoul",
-        flag:"kr"
+        flag:"kr",
       },
     ]
   },
@@ -106,7 +107,24 @@ Module.register("worldclock",{
 
     var gapWrapper = document.createElement("div")
     gapWrapper.className = 'gap'
-    gapWrapper.innerHTML = 'UTC ' + clock.format('Z')
+
+    var gap = ""
+    if (this.config.offsetTimezone) {
+      var ori = "+"
+      var oclock = moment().tz(this.config.offsetTimezone)
+      var os = clock.utcOffset() - oclock.utcOffset()
+      if (os < 0) {
+        os = oclock.utcOffset() - clock.utcOffset()
+        ori = "-"
+      }
+
+      var dur = moment.duration(os, 'minutes')
+      gap = ori + moment.utc(dur.asMilliseconds()).format('HH:mm')
+    } else {
+      gap = "UTC " + clock.format('Z')
+    }
+
+    gapWrapper.innerHTML = gap
 
     captionWrapper.appendChild(gapWrapper)
 
