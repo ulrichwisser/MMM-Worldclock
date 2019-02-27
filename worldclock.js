@@ -9,7 +9,7 @@ Module.register("worldclock",{
   defaults: {
     timeFormat: 'LT', //defined in moment.js format()
     style: 'left', //where the time could be located; 'top', 'left','right','bottom'
-    offsetTimeZone: null, // or "Europe/Berlin" to get difference from this timezone to each clock.
+    offsetTimezone: null, // or "Europe/Berlin" to get difference from this timezone to each clock.
     clocks: [
       {
         title: "Seoul",
