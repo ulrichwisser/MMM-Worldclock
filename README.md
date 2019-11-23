@@ -22,7 +22,7 @@ git clone https://github.com/eouia/worldclock # clone this repository
   config: {
     // See 'Configuration options' for more information.
 
-    timeFormat: 'HH:mm A', //defined in moment.js format()
+    timeFormat: 'hh:mm A', //defined in moment.js format()
     style: 'top', //predefined 4 styles; 'top', 'left','right','bottom'
     offsetTimezone: null, // Or you can set `Europe/Berlin` to get timegap difference from this timezone. `null` will be UTC timegap.
     clocks: [
