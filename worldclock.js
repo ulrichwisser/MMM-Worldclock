@@ -82,6 +82,13 @@ Module.register("worldclock",{
       clock.tz(c.timezone)
     }
 
+    var timeFormat
+    if (c.timeFormat == null || undefined ) {
+      timeFormat= this.config.timeFormat
+    } else {
+      timeFormat = c.timeFormat
+    }
+
     var timeString
     timeString = clock.format(this.config.timeFormat)
 

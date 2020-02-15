@@ -64,6 +64,7 @@ The following properties can be configured:
 | `title`           | The clock title of each timezone. if it is omitted or null, the `timezone` value will be displayed instead. <br><br> **Example:** `My Home`, `The Golden Gate`, `Hong Kong Office` or `null`  
 | `timezone`        | Specify a timezone to show current local time. <br><br> **Possible examples values:** `America/New_York`, `Europe/Berlin`, `Etc/GMT+10` <br>See more informations about configuration value [here](https://momentjs.com/timezone/docs/#/data-formats/packed-format/)<br> **Default value:** `null`<br> If this value is null or omitted, current local timezone value (defined in config.js) will be used. I don't recommend it because the purpose of this module is showing another local time.<br>All available timzone codes are [here](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
 |`flag `  |  [ISO 3166-1-alpha-2 code](https://www.iso.org/obp/ui/#search/code/) for country. |
+|`timeFormat`|Override module  timeFormat configuration for this clock. For possible values see timeFormat above.|
 
 
 ## Style Customizing
