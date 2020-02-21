@@ -76,7 +76,7 @@ And if you set the `style` value in configuration, the classname 'style-[style c
 
 ## Updated
 * 2019-02-24
-  * `timezoneOffset` is added.
+  * `offsetTimezone` is added.
 * 2017-08-25
   * supports `MMM-TelegramBot` (https://github.com/eouia/MMM-TelegramBot)
   * command `/worldclock` is added
