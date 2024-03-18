@@ -4,7 +4,7 @@
 *
 * By eouia
 */
-Module.register("worldclock",{
+Module.register("MMM-Worldclock",{
   // Module config defaults.
   defaults: {
     timeFormat: 'LT', //defined in moment.js format()
