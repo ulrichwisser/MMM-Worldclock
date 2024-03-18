@@ -1,4 +1,4 @@
-# Module: worldclock
+# Module: MMM-Worldclock
 This module is derived from default MagicMirror module 'clock' and modified. Thanks to michaelteeuw.
 This module displays the current times of several locations.
 
@@ -17,7 +17,7 @@ git clone https://github.com/eouia/worldclock # clone this repository
 
 ````javascript
 {
-  module: 'worldclock',
+  module: 'MMM-Worldclock',
   position: 'top_left', // This can be any of the regions, best results in top_left or top_right regions
   config: {
     // See 'Configuration options' for more information.
