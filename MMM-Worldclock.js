@@ -24,7 +24,7 @@ Module.register("MMM-Worldclock",{
   },
   // Define styles.
   getStyles: function() {
-    return ["worldclock.css"]
+    return ["MMM-Worldclock.css"]
   },
 
   getCommands: function(commander) {
