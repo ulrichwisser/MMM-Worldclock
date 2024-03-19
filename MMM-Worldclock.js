@@ -1,5 +1,5 @@
 /* global Log, Module, moment, config */
-/* Magic Mirror
+/* MagicMirror²
 * Module: worldlock
 *
 * By eouia
