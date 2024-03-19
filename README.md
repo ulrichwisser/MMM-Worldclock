@@ -10,7 +10,7 @@ This module displays the current times of several locations.
 
 ```bash
 cd ~/MagicMirror/modules # navigate to module folder
-git clone https://github.com/eouia/worldclock # clone this repository
+git clone https://github.com/ulrichwisser/MMM-Worldclock.git # clone this repository
 ```
 
 2\. Then, add the following into the `modules` section of your `config/config.js` file:
