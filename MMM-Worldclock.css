@@ -1,47 +1,47 @@
-.worldclock {
+.MMM-Worldclock {
   min-width:270px;
   line-height:normal;
   display:block;
 }
 
-.worldclock .world {
+.MMM-Worldclock .world {
   margin-bottom: 10px;
 }
 
-.worldclock .time {
+.MMM-Worldclock .time {
   display:block;
   height:100%;
   color:#FFF;
 }
 
-.worldclock .flag {
+.MMM-Worldclock .flag {
   font-size:100%;
 }
 
-.worldclock .caption {
+.MMM-Worldclock .caption {
   display:flex;
   height:100%;
   font-size:50%;
 }
 
-.worldclock .main {
+.MMM-Worldclock .main {
   display:flex;
 }
 
-.worldclock .gap {
+.MMM-Worldclock .gap {
   padding:0;
   margin:0;
   color: #999;
 }
 
-.worldclock .zone {
+.MMM-Worldclock .zone {
   display:block;
   padding:0;
   margin:0;
   color:#DDD;
 }
 
-.worldclock .flag-icon {
+.MMM-Worldclock .flag-icon {
   border-radius: 50%;
   box-shadow:0 0 3px #FFF;
 }
@@ -50,7 +50,7 @@
 
 
 /* style : top */
-.worldclock .style-top .world {
+.MMM-Worldclock .style-top .world {
   display:flex;
   flex-direction: column-reverse;
   justify-content:center;
@@ -58,27 +58,27 @@
   text-align:inherit;
 }
 
-.worldclock .style-top .caption,
-.worldclock .style-top .main {
+.MMM-Worldclock .style-top .caption,
+.MMM-Worldclock .style-top .main {
   display:block;
   text-align:inherit;
   vertical-align:top;
 }
 
-.worldclock .style-top .flag,
-.worldclock .style-top .time,
-.worldclock .style-top .zone,
-.worldclock .style-top .gap {
+.MMM-Worldclock .style-top .flag,
+.MMM-Worldclock .style-top .time,
+.MMM-Worldclock .style-top .zone,
+.MMM-Worldclock .style-top .gap {
   display:inline;
 }
 
-.worldclock .style-top .time::before,
-.worldclock .style-top .gap::before {
+.MMM-Worldclock .style-top .time::before,
+.MMM-Worldclock .style-top .gap::before {
   content: "  ";
 }
 
 /* style : bottom */
-.worldclock .style-bottom .world {
+.MMM-Worldclock .style-bottom .world {
   display:flex;
   flex-direction: column;
   justify-content:center;
@@ -86,27 +86,27 @@
   text-align:inherit;
 }
 
-.worldclock .style-bottom .caption,
-.worldclock .style-bottom .main {
+.MMM-Worldclock .style-bottom .caption,
+.MMM-Worldclock .style-bottom .main {
   display:block;
   text-align:inherit;
   vertical-align:top;
 }
 
-.worldclock .style-bottom .flag,
-.worldclock .style-bottom .time,
-.worldclock .style-bottom .zone,
-.worldclock .style-bottom .gap {
+.MMM-Worldclock .style-bottom .flag,
+.MMM-Worldclock .style-bottom .time,
+.MMM-Worldclock .style-bottom .zone,
+.MMM-Worldclock .style-bottom .gap {
   display:inline;
 }
 
-.worldclock .style-bottom .time::before,
-.worldclock .style-bottom .gap::before {
+.MMM-Worldclock .style-bottom .time::before,
+.MMM-Worldclock .style-bottom .gap::before {
   content: "  ";
 }
 
 /* style : left */
-.worldclock .style-left .world {
+.MMM-Worldclock .style-left .world {
   display:flex;
   flex-direction: row-reverse;
   justify-content:flex-start;
@@ -115,7 +115,7 @@
   text-align:inherit;
 }
 
-.worldclock .style-left .caption {
+.MMM-Worldclock .style-left .caption {
   display:flex;
   flex-direction: column;
   align-items:flex-end;
@@ -124,30 +124,30 @@
   width:30%;
 }
 
-.worldclock .style-left .caption .zone,
-.worldclock .style-left .caption .gap {
+.MMM-Worldclock .style-left .caption .zone,
+.MMM-Worldclock .style-left .caption .gap {
   display:block;
   text-align:right;
 
 }
 
-.worldclock .style-left .main {
+.MMM-Worldclock .style-left .main {
   flex-grow:1;
   width:70%;
 }
 
-.worldclock .style-left .main .flag {
+.MMM-Worldclock .style-left .main .flag {
   order:2;
   margin-left:10px;
 }
 
-.worldclock .style-left .main .time {
+.MMM-Worldclock .style-left .main .time {
   order:1;
 }
 
 
 /* style : right */
-.worldclock .style-right .world {
+.MMM-Worldclock .style-right .world {
   display:flex;
   flex-direction: row;
   justify-content:center;
@@ -155,7 +155,7 @@
   text-align:inherit;
 }
 
-.worldclock .style-right .caption {
+.MMM-Worldclock .style-right .caption {
   display:flex;
   flex-direction: column;
   align-items:flex-start;
@@ -164,13 +164,13 @@
   width:30%;
 }
 
-.worldclock .style-right .caption .zone,
-.worldclock .style-right .caption .gap {
+.MMM-Worldclock .style-right .caption .zone,
+.MMM-Worldclock .style-right .caption .gap {
   display:block;
   text-align:left;
 }
 
-.worldclock .style-right .main {
+.MMM-Worldclock .style-right .main {
   flex-grow:1;
   text-align:right;
   justify-content: flex-end;
@@ -178,11 +178,11 @@
   width:70%;
 }
 
-.worldclock .style-right .main .flag {
+.MMM-Worldclock .style-right .main .flag {
   order:1;
   margin-right :10px;
 }
 
-.worldclock .style-right .main .time {
+.MMM-Worldclock .style-right .main .time {
   order:2;
 }
