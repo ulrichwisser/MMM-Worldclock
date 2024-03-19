@@ -1,7 +1,7 @@
 /* global Log, Module, moment, config */
 /*
  * MagicMirror²
- * Module: worldlock
+ * Module: MMM-Worldclock
  *
  * By eouia
  */
