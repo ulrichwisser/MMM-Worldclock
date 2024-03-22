@@ -1,7 +1,7 @@
 .MMM-Worldclock {
-  min-width: 270px;
-  line-height: normal;
-  display: block;
+  min-width:270px;
+  line-height:normal;
+  display:block;
 }
 
 .MMM-Worldclock .world {
@@ -9,64 +9,67 @@
 }
 
 .MMM-Worldclock .time {
-  display: block;
-  height: 100%;
-  color: #fff;
+  display:block;
+  height:100%;
+  color:#FFF;
 }
 
 .MMM-Worldclock .flag {
-  font-size: 100%;
+  font-size:100%;
 }
 
 .MMM-Worldclock .caption {
-  display: flex;
-  height: 100%;
-  font-size: 50%;
+  display:flex;
+  height:100%;
+  font-size:50%;
 }
 
 .MMM-Worldclock .main {
-  display: flex;
+  display:flex;
 }
 
 .MMM-Worldclock .gap {
-  padding: 0;
-  margin: 0;
+  padding:0;
+  margin:0;
   color: #999;
 }
 
 .MMM-Worldclock .zone {
-  display: block;
-  padding: 0;
-  margin: 0;
-  color: #ddd;
+  display:block;
+  padding:0;
+  margin:0;
+  color:#DDD;
 }
 
 .MMM-Worldclock .flag-icon {
   border-radius: 50%;
-  box-shadow: 0 0 3px #fff;
+  box-shadow:0 0 3px #FFF;
 }
+
+
+
 
 /* style : top */
 .MMM-Worldclock .style-top .world {
-  display: flex;
+  display:flex;
   flex-direction: column-reverse;
-  justify-content: center;
-  align-items: stretch;
-  text-align: inherit;
+  justify-content:center;
+  align-items:stretch;
+  text-align:inherit;
 }
 
 .MMM-Worldclock .style-top .caption,
 .MMM-Worldclock .style-top .main {
-  display: block;
-  text-align: inherit;
-  vertical-align: top;
+  display:block;
+  text-align:inherit;
+  vertical-align:top;
 }
 
 .MMM-Worldclock .style-top .flag,
 .MMM-Worldclock .style-top .time,
 .MMM-Worldclock .style-top .zone,
 .MMM-Worldclock .style-top .gap {
-  display: inline;
+  display:inline;
 }
 
 .MMM-Worldclock .style-top .time::before,
@@ -76,25 +79,25 @@
 
 /* style : bottom */
 .MMM-Worldclock .style-bottom .world {
-  display: flex;
+  display:flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: stretch;
-  text-align: inherit;
+  justify-content:center;
+  align-items:stretch;
+  text-align:inherit;
 }
 
 .MMM-Worldclock .style-bottom .caption,
 .MMM-Worldclock .style-bottom .main {
-  display: block;
-  text-align: inherit;
-  vertical-align: top;
+  display:block;
+  text-align:inherit;
+  vertical-align:top;
 }
 
 .MMM-Worldclock .style-bottom .flag,
 .MMM-Worldclock .style-bottom .time,
 .MMM-Worldclock .style-bottom .zone,
 .MMM-Worldclock .style-bottom .gap {
-  display: inline;
+  display:inline;
 }
 
 .MMM-Worldclock .style-bottom .time::before,
@@ -104,80 +107,82 @@
 
 /* style : left */
 .MMM-Worldclock .style-left .world {
-  display: flex;
+  display:flex;
   flex-direction: row-reverse;
-  justify-content: flex-start;
-  align-items: center;
-  align-content: flex-start;
-  text-align: inherit;
+  justify-content:flex-start;
+  align-items:center;
+  align-content:flex-start;
+  text-align:inherit;
 }
 
 .MMM-Worldclock .style-left .caption {
-  display: flex;
+  display:flex;
   flex-direction: column;
-  align-items: flex-end;
-  margin-right: 15px;
-  flex-grow: 1;
-  width: 30%;
+  align-items:flex-end;
+  margin-right:15px;
+  flex-grow:1;
+  width:30%;
 }
 
 .MMM-Worldclock .style-left .caption .zone,
 .MMM-Worldclock .style-left .caption .gap {
-  display: block;
-  text-align: right;
+  display:block;
+  text-align:right;
+
 }
 
 .MMM-Worldclock .style-left .main {
-  flex-grow: 1;
-  width: 70%;
+  flex-grow:1;
+  width:70%;
 }
 
 .MMM-Worldclock .style-left .main .flag {
-  order: 2;
-  margin-left: 10px;
+  order:2;
+  margin-left:10px;
 }
 
 .MMM-Worldclock .style-left .main .time {
-  order: 1;
+  order:1;
 }
+
 
 /* style : right */
 .MMM-Worldclock .style-right .world {
-  display: flex;
+  display:flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  text-align: inherit;
+  justify-content:center;
+  align-items:center;
+  text-align:inherit;
 }
 
 .MMM-Worldclock .style-right .caption {
-  display: flex;
+  display:flex;
   flex-direction: column;
-  align-items: flex-start;
-  margin-left: 15px;
-  flex-grow: 1;
-  width: 30%;
+  align-items:flex-start;
+  margin-left:15px;
+  flex-grow:1;
+  width:30%;
 }
 
 .MMM-Worldclock .style-right .caption .zone,
 .MMM-Worldclock .style-right .caption .gap {
-  display: block;
-  text-align: left;
+  display:block;
+  text-align:left;
 }
 
 .MMM-Worldclock .style-right .main {
-  flex-grow: 1;
-  text-align: right;
+  flex-grow:1;
+  text-align:right;
   justify-content: flex-end;
-  align-items: center;
-  width: 70%;
+  align-items:center;
+  width:70%;
 }
 
 .MMM-Worldclock .style-right .main .flag {
-  order: 1;
-  margin-right: 10px;
+  order:1;
+  margin-right :10px;
 }
 
 .MMM-Worldclock .style-right .main .time {
-  order: 2;
+  order:2;
 }
