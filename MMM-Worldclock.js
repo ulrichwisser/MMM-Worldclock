@@ -94,7 +94,7 @@ Module.register("MMM-Worldclock", {
     }
 
     let timeString
-    timeString = clock.format(this.config.timeFormat)
+    timeString = clock.format(timeFormat)
 
     const timeWrapper = document.createElement("div")
     timeWrapper.innerHTML = timeString
